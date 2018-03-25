@@ -1,0 +1,66 @@
+<!doctype <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Rock, Paper, Scissor Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/style.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+    <div class="jumbotron">
+        <h1>Rock, Paper, Scissor, Shoot!</h1>
+        <h3>Click the start button to begin</h3>
+        <button type="button" class="btn btn-warning" id="startBtn">Start</button>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="panel panel-warning">
+                    <div class="panel-heading">Player 1: <span id="player1"></span></div>
+                    <div class="panel-body">
+                        Panel content
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-success">
+                    <div class="panel-heading">Score Keeper</span></div>
+                    <div class="panel-body">
+                        Panel content
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-warning">
+                    <div class="panel-heading">Player 2: <span id="player2"></span></div>
+                    <div class="panel-body">
+                        Panel content
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+<tail>
+    <script src="app.js"></script>
+    
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyB0TgVSK2TvmcUuw89Bu8NfweGezeL_t7w",
+            authDomain: "rps-multiplayer-v1.firebaseapp.com",
+            databaseURL: "https://rps-multiplayer-v1.firebaseio.com",
+            projectId: "rps-multiplayer-v1",
+            storageBucket: "rps-multiplayer-v1.appspot.com",
+            messagingSenderId: "332245113145"
+        };
+        firebase.initializeApp(config);
+    </script>
+</tail>
+</html>
