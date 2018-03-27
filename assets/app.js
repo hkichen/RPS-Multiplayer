@@ -1,13 +1,13 @@
-// Initialize Firebase
-var config = {
+  // Initialize Firebase
+  var config = {
     apiKey: "AIzaSyB0TgVSK2TvmcUuw89Bu8NfweGezeL_t7w",
     authDomain: "rps-multiplayer-v1.firebaseapp.com",
     databaseURL: "https://rps-multiplayer-v1.firebaseio.com",
     projectId: "rps-multiplayer-v1",
     storageBucket: "rps-multiplayer-v1.appspot.com",
     messagingSenderId: "332245113145"
-};
-firebase.initializeApp(config);
+  };
+  firebase.initializeApp(config);
 
 var database = firebase.database();
 var connectionsRef = database.ref("/connections");
