@@ -14,53 +14,58 @@
     <div class="jumbotron">
         <h1>Rock, Paper, Scissor, Shoot!</h1>
         <h3>Enter your name and click the start button to begin</h3>
+        <h5 class="alert">Two players are already playing.</h5>
         <form class="form-inline">
             <input type="text" id="playerNameInput" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Enter your name...">
             <button type="add" id="addPlayerBtn" class="btn btn-warning mb-2">Start</button>
         </form>
     </div>
-    <div class="row">
-        <div class="col"
-    </div>
+    
     <div class="container">
         <div class="row">
             <div class="col-md-4">
                 <div class="panel panel-warning">
-                    <div class="panel-heading">Player 1: <span id="player1"></span></div>
+                    <div class="panel-heading">Player 1: <span id="player1Name"></span></div>
                     <div class="panel-body">
-                        <img id="rock" src="assets/images/rock.png" />
-                        <img id="paper" src="assets/images/paper.png" />
-                        <img id="scissor" src="assets/images/scissor.png" />
+                        <p class="waiting-1">Waiting for Player 1</p>
+                        <div class="moves-1">
+                            <img class="choice" data-choice="r" data-text="rock" src="assets/images/rock.png" />
+                            <img class="choice" data-choice="p" data-text="paper" src="assets/images/paper.png" />
+                            <img class="choice" data-choice="s" data-text="scissor" src="assets/images/scissor.png" /> 
+                        </div>
+                        <p class="choice-1"></p>
+                        <p class="win-loss-1"></p>
                     </div>
                 </div>
             </div>
+
             <div class="col-md-4">
                 <div class="panel panel-success">
                     <div class="panel-heading">Score Board</div>
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-sm-12">
-                                <p id="gameUpdate">winner info goes here</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <p id="yourScoreUpdate"><span id="yourScore">o</span></p>
-                            </div>
-                            <div class="col-sm-6">
-                                <p id="opponentScoreUpdate"><span id="opponentScore">0</span></p>
+                                <p class="choice-1" id="gameUpdate">winner info goes here</p>
+                                <p class="turn"></p>
+                                <p class="winner"></p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
             <div class="col-md-4">
                 <div class="panel panel-warning">
-                    <div class="panel-heading">Player 2: <span id="player2"></span></div>
+                    <div class="panel-heading">Player 2: <span id="player2Name"></span></div>
                     <div class="panel-body">
-                        <img id="rock" src="assets/images/rock.png" />
-                        <img id="paper" src="assets/images/paper.png" />
-                        <img id="scissor" src="assets/images/scissor.png" />
+                            <p class="waiting-2">Waiting for Player 2</p>
+                        <div class="moves-2">
+                            <img class="choice" data-choice="r" id="rock" src="assets/images/rock.png" />
+                            <img class="choice" data-choice="p" id="paper" src="assets/images/paper.png" />
+                            <img class="choice" data-choice="s" id="scissor" src="assets/images/scissor.png" />  
+                        </div>
+                        <p class="choice-2"></p>
+                        <p class="win-loss-2"></p>
                     </div>
                 </div>
             </div>
@@ -71,10 +76,12 @@
                 <div class="panel panel-warning">
                     <div class="panel-heading">Chat Box</div>
                     <div class="panel-body">
-                        <form id="message-form">
-                            <input type="text" id="message-input" placeholder="Message">
-                            <input id="addMessage" type="submit" value="Send">
-                        </form>
+                        <div class="messages"></div>
+                            <form class="message-form">
+                                <input type="text" id="message-input" placeholder="Send a message...">
+                                <input id="addMessage" type="submit" value="Send">
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -84,19 +91,6 @@
 </body>
 <tail>
     <script src="assets/app.js"></script>
-    
     <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
-    <script>
-        // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyB0TgVSK2TvmcUuw89Bu8NfweGezeL_t7w",
-            authDomain: "rps-multiplayer-v1.firebaseapp.com",
-            databaseURL: "https://rps-multiplayer-v1.firebaseio.com",
-            projectId: "rps-multiplayer-v1",
-            storageBucket: "rps-multiplayer-v1.appspot.com",
-            messagingSenderId: "332245113145"
-        };
-        firebase.initializeApp(config);
-    </script>
 </tail>
 </html>
