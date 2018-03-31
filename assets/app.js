@@ -119,4 +119,27 @@ $(document).ready(function () {
             DOMFunctions.showGameResult("It's a Tie!");
         }
     }
+    //Pseudocode
+    //write function for when player2 connects with firebase -- or do this by managing connections?? Read on connection docu for firebase---
+
+    //this assigns a number to each player--value is 1 or 2 depending on snapshot value
+    con.once("value", function(snapshot) {
+        if (Object.keys(snapshot.val()).indexOf("1") === -1) {
+            player1.number = "1";
+            player2.number = "2";
+        }else if(Object.keys(snapshot.val()).indexOf("2") === -1) {
+            player1.number = "2";
+            player2.number = "1";
+        }
+            
+        if (player1.number !== "0") {
+            con = connections.child(player.number);
+            con.set(player1);
+            con.onDisconnect().remove();
+        }else {
+            app.delete();
+        }
+    });
 });
+
+
