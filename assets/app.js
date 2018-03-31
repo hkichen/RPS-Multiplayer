@@ -140,6 +140,20 @@ $(document).ready(function () {
             app.delete();
         }
     });
-});
+}); //end of documnet.ready()
+
+//pseudocode:
+//write a function to record wins/losses
+//update what user chooses, and turns
+//---update connection child data: connections.child(player1.number).update()
+//if you win/loose, increase win/loss count
+//show the win in the center display box
+
+//have a function that covers all things related to changing the display of game (dom functions)
+//displayPlayer1Join, displayPlayer2Info, updatePlayer1Stats, displayChat, displayGameResult
+
+//write a function to submit chat on button click
+
+
 
 
