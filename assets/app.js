@@ -123,7 +123,7 @@ $(document).ready(function () {
     //write function for when player2 connects with firebase -- or do this by managing connections?? Read on connection docu for firebase---
 
     //this assigns a number to each player--value is 1 or 2 depending on snapshot value
-    con.once("value", function(snapshot) {
+    connections.once("value", function(snapshot) {
         if (Object.keys(snapshot.val()).indexOf("1") === -1) {
             player1.number = "1";
             player2.number = "2";
